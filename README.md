@@ -47,9 +47,9 @@ The process of training the model is provided in [Base Model Training Notebook.]
 - **Routine for the Training of the models:** In this project, a standard approach to model training was adopted, but multiple variations were explored to fine-tune performance. [Model Training Routine Notebook](https://github.com/MiestoMeska/NLP_ToxicCommentsClassification/blob/master/notebooks/4.train_model_routine.ipynb) contains the used routine for training the models.
  Various models were trained using different gradient accumulation values, which allowed for the simulation of larger batch sizes and improved gradient updates. Beyond just experimenting with training parameters, multiple architectures were evaluated, including multihead models and multihead models with shared layers. The multihead models enabled distinct classification heads for each label, while the shared-layer models explored combining representations to improve learning across classes with shared characteristics. This iterative routine led to the training of multiple models, and after evaluation, a few of the most successful ones were selected for further analysis. Since the primary goal of this project was multi-label classification, the model with the highest multi-label F1 score was chosen for final evaluation.
 
-![Multilabel_f1_acc](https://github.com/MiestoMeska/NLP_ToxicCommentsClassification/blob/master/assets/img/models_comp_metric_val_multilabel_acc.JPG)
+![Multilabel_f1_acc](https://github.com/MiestoMeska/NLP_ToxicCommentsClassification/blob/main/assets/img/models_comp_metric_val_multilabel_acc.JPG)
 
-![Multilabel_f1_score](https://github.com/MiestoMeska/NLP_ToxicCommentsClassification/blob/master/assets/img/models_comp_metric_val_multilabel_f1.JPG)
+![Multilabel_f1_score](https://github.com/MiestoMeska/NLP_ToxicCommentsClassification/blob/main/assets/img/models_comp_metric_val_multilabel_f1.JPG)
 
 The two graphs above represent the validation accuracy and F1 score for the multi-label classification task across different model versions during the training process.
 
