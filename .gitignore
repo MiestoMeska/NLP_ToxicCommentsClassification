@@ -1,0 +1,8 @@
+
+*.pth
+*.csv
+*.pyc
+/notebooks/tb_logs
+/models
+/notebooks/.ipynb_checkpoints
+*.ckpt
