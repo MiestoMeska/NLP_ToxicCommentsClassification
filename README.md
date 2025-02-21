@@ -33,29 +33,29 @@ In this project, we build on our deep learning knowledge to tackle a complex cla
 
 - **Acquisition:** The dataset used for this project is provided by the [Kaggle Jigsaw Toxic Comment Classification Challenge](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge). This dataset contains user comments from Wikipedia, labeled for various types of toxicity, including toxic, severe toxic, obscene, threat, insult, and identity hate.
    
-- **Exploration:**  [An Exploratory Data Analysis (EDA)](https://github.com/TuringCollegeSubmissions/vruzga-DL.2.5/blob/master/notebooks/1.EDA.ipynb) provides insights into the distribution of toxic and non-toxic comments, the balance of different toxicity classes, and the characteristics of the dataset.
+- **Exploration:**  [An Exploratory Data Analysis (EDA)](https://github.com/MiestoMeska/NLP_ToxicCommentsClassification/blob/master/notebooks/1.EDA.ipynb) provides insights into the distribution of toxic and non-toxic comments, the balance of different toxicity classes, and the characteristics of the dataset.
 
-- **Augmentation:** [The Data augmentation notebook](https://github.com/TuringCollegeSubmissions/vruzga-DL.2.5/blob/master/notebooks/2.data_augmentation.ipynb) contains the process of tackling the imbalance of the classes in the given dataset. 
+- **Augmentation:** [The Data augmentation notebook](https://github.com/MiestoMeska/NLP_ToxicCommentsClassification/blob/master/notebooks/2.data_augmentation.ipynb) contains the process of tackling the imbalance of the classes in the given dataset. 
 
 #### Model Creation
 
 
 
 - **Baseline Model:** For this project, a **DistilBERT-based model** was selected. DistilBERT is a smaller, faster, and lighter version of BERT, retaining most of its language understanding capabilities while being more computationally efficient. This makes it well-suited for the task of multi-label classification in detecting toxic comments.
-The process of training the model is provided in [Base Model Training Notebook.](https://github.com/TuringCollegeSubmissions/vruzga-DL.2.5/blob/master/notebooks/3.train_base_model.ipynb).
+The process of training the model is provided in [Base Model Training Notebook.](https://github.com/MiestoMeska/NLP_ToxicCommentsClassification/blob/master/notebooks/3.train_base_model.ipynb).
 
-- **Routine for the Training of the models:** In this project, a standard approach to model training was adopted, but multiple variations were explored to fine-tune performance. [Model Training Routine Notebook](https://github.com/TuringCollegeSubmissions/vruzga-DL.2.5/blob/master/notebooks/4.train_model_routine.ipynb) contains the used routine for training the models.
+- **Routine for the Training of the models:** In this project, a standard approach to model training was adopted, but multiple variations were explored to fine-tune performance. [Model Training Routine Notebook](https://github.com/MiestoMeska/NLP_ToxicCommentsClassification/blob/master/notebooks/4.train_model_routine.ipynb) contains the used routine for training the models.
  Various models were trained using different gradient accumulation values, which allowed for the simulation of larger batch sizes and improved gradient updates. Beyond just experimenting with training parameters, multiple architectures were evaluated, including multihead models and multihead models with shared layers. The multihead models enabled distinct classification heads for each label, while the shared-layer models explored combining representations to improve learning across classes with shared characteristics. This iterative routine led to the training of multiple models, and after evaluation, a few of the most successful ones were selected for further analysis. Since the primary goal of this project was multi-label classification, the model with the highest multi-label F1 score was chosen for final evaluation.
 
-![Multilabel_f1_acc](https://github.com/TuringCollegeSubmissions/vruzga-DL.2.5/blob/master/assets/img/models_comp_metric_val_multilabel_acc.JPG)
+![Multilabel_f1_acc](https://github.com/MiestoMeska/NLP_ToxicCommentsClassification/blob/master/assets/img/models_comp_metric_val_multilabel_acc.JPG)
 
-![Multilabel_f1_score](https://github.com/TuringCollegeSubmissions/vruzga-DL.2.5/blob/master/assets/img/models_comp_metric_val_multilabel_f1.JPG)
+![Multilabel_f1_score](https://github.com/MiestoMeska/NLP_ToxicCommentsClassification/blob/master/assets/img/models_comp_metric_val_multilabel_f1.JPG)
 
 The two graphs above represent the validation accuracy and F1 score for the multi-label classification task across different model versions during the training process.
 
 Given the goal of maximizing performance in multi-label classification, Multihead Model Version 4 was selected for final evaluation as it demonstrated the highest overall accuracy and F1 score across the validation dataset, consistently outperforming other models in the project scope.
 
-- **Chosen Model Evaluation:** This section of the project involves fine-tuning the classification thresholds for each label to optimize the model's precision and recall. [The Selected Model Evaluation Notebook](https://github.com/TuringCollegeSubmissions/vruzga-DL.2.5/blob/master/notebooks/5.selected_model_eval.ipynb) covers the process of determining the optimal thresholds using by testing the model on unseen test data to evaluate its performance. It also includes detailed steps on calculating performance metrics such as accuracy, F1 score, and precision-recall for each label. The notebook documents the entire evaluation process, ensuring that the model generalizes well to new data and meets the project's classification goals.
+- **Chosen Model Evaluation:** This section of the project involves fine-tuning the classification thresholds for each label to optimize the model's precision and recall. [The Selected Model Evaluation Notebook](https://github.com/MiestoMeska/NLP_ToxicCommentsClassification/blob/master/notebooks/5.selected_model_eval.ipynb) covers the process of determining the optimal thresholds using by testing the model on unseen test data to evaluate its performance. It also includes detailed steps on calculating performance metrics such as accuracy, F1 score, and precision-recall for each label. The notebook documents the entire evaluation process, ensuring that the model generalizes well to new data and meets the project's classification goals.
 
 ### Conclusions of the Project
 
