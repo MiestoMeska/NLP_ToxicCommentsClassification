@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="https://github.com/MiestoMeska/NLP_ToxicCommentsClassification/blob/main/assets/img/Mobbs_Dean-Online-Toxicity.jpg" alt="Toxic" width="75%">
+</p>
+
 # Natural Language Processing
 # Toxic comment challenge
 
